@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<body>
+
+	<h1>My First Google Map </h1>
+	<div id="map" style="width: 600px; height: 400px; right: -89px"></div>
+	<script>
+		var map =L.map('map').setView([38,36.],4.5);
+		L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=4xmNtgVRUTqItzUvAc4R',{attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+		}).addTo(map);
+		var marker=L.marker([39.8681,32.7361]).addTo(map).bindPopup("<b> my university");
+		map.fitBounds(marker) 
+	</script>
+</body>
+</head>
+</html>
